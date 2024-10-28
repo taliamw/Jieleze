@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical">
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome to Jieleze!"
         android:textSize="24sp"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:layout_gravity="center" />
+
+    <Button
+        android:id="@+id/fragment1Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load Fragment 1" />
+
+    <Button
+        android:id="@+id/fragment2Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load Fragment 2" />
+
+    <Button
+        android:id="@+id/fragment3Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load Fragment 3" />
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
 </LinearLayout>
