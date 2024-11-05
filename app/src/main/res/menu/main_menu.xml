@@ -20,4 +20,11 @@
     <item
         android:id="@+id/action_activity_b"
         android:title="Go to Activity B" />
+
+    <item
+        android:id="@+id/action_popup_menu"
+        android:title="Show Popup Menu" />
+    <item
+        android:id="@+id/action_context_menu"
+        android:title="Show Context Menu" />
 </menu>

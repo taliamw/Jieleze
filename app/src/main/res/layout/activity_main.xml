@@ -1,41 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
-
+    <!-- Welcome Text -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome to Jieleze!"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:layout_gravity="center" />
+        android:layout_marginBottom="24dp" />
+
+    <!-- Fragment Buttons Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fragment Buttons"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
 
     <Button
         android:id="@+id/fragment1Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Load Fragment 1" />
+        android:text="Load fragment 1"
+        android:layout_marginBottom="8dp" />
 
     <Button
         android:id="@+id/fragment2Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Load Fragment 2" />
+        android:text="Load fragment 2"
+        android:layout_marginBottom="8dp" />
 
     <Button
         android:id="@+id/fragment3Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Load Fragment 3" />
+        android:text="Load Fragment 3"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Activity Buttons Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activity Buttons"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/activityAButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Activity A"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/activityBButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Activity B"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Menu Buttons Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu Buttons"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/popupMenuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Popup Menu"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/contextMenuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Context Menu"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Fragment Container -->
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>

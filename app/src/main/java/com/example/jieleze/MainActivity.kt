@@ -20,8 +20,10 @@ class MainActivity : Activity() {
         val fragment1Button: Button = findViewById(R.id.fragment1Button)
         val fragment2Button: Button = findViewById(R.id.fragment2Button)
         val fragment3Button: Button = findViewById(R.id.fragment3Button)
+        val popupMenuButton: Button = findViewById(R.id.popupMenuButton)
+        val contextMenuButton: Button = findViewById(R.id.contextMenuButton)
 
-        fragment2Button.setOnClickListener {
+        popupMenuButton.setOnClickListener {
             val popup = PopupMenu(this, it)
             popup.menuInflater.inflate(R.menu.popup_menu, popup.menu)
             popup.setOnMenuItemClickListener { menuItem ->
@@ -43,7 +45,15 @@ class MainActivity : Activity() {
         fragment3Button.setOnClickListener {
             loadFragment(Fragment3())
         }
-        registerForContextMenu(fragment1Button)  // Register this button for the context menu
+
+        fragment2Button.setOnClickListener {
+            loadFragment(Fragment2())
+        }
+        fragment1Button.setOnClickListener {
+            loadFragment(Fragment1())
+        }
+        registerForContextMenu(contextMenuButton)  // Register this button for the context menu
+
     }
 
     private fun loadFragment(fragment: Fragment) {
@@ -79,9 +89,35 @@ class MainActivity : Activity() {
                 startActivity(intent)  // Navigate to Activity B
                 true
             }
+            R.id.action_popup_menu -> {
+                val fragment2Button: Button = findViewById(R.id.fragment2Button)
+                val popup = PopupMenu(this, fragment2Button)
+                popup.menuInflater.inflate(R.menu.popup_menu, popup.menu)
+                popup.setOnMenuItemClickListener { menuItem ->
+                    when (menuItem.itemId) {
+                        R.id.popup_action_share -> {
+                            // Handle share action
+                            true
+                        }
+                        R.id.popup_action_favorite -> {
+                            // Handle favorite action
+                            true
+                        }
+                        else -> false
+                    }
+                }
+                popup.show()
+                true
+            }
+            R.id.action_context_menu -> {
+                val fragment1Button: Button = findViewById(R.id.fragment1Button)
+                openContextMenu(fragment1Button)  // Open context menu for fragment1Button
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
+
 
     //Context menu on fragment 1 button
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
